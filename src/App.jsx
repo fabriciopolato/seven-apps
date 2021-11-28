@@ -11,7 +11,7 @@ const client = new QueryClient({
   },
 });
 
-function App() {
+export const App = () => {
   return (
     <QueryClientProvider client={client}>
       <UserFiltersProvider>
@@ -19,6 +19,6 @@ function App() {
       </UserFiltersProvider>
     </QueryClientProvider>
   );
-}
+};
 
 export default App;
