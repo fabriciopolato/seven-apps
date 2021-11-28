@@ -1,5 +1,7 @@
 import { Routes } from "./routes";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { UserFiltersProvider } from "./hooks/useFilter";
+import "./style/global.css";
 
 const client = new QueryClient({
   defaultOptions: {
@@ -12,7 +14,9 @@ const client = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={client}>
-      <Routes />
+      <UserFiltersProvider>
+        <Routes />
+      </UserFiltersProvider>
     </QueryClientProvider>
   );
 }
