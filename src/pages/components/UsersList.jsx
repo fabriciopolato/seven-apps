@@ -68,7 +68,8 @@ export const UsersList = ({ users, cache }) => {
                     margin: "0 50px 0 10px",
                   }}
                 >
-                  <p>{user.name}</p>
+                  <p style={{ margin: 0, fontSize: "0.8rem" }}>Name</p>
+                  <p style={{ margin: "0.5rem 0 0 0" }}>{user.name}</p>
                 </div>
                 <div
                   className="col age"
@@ -78,8 +79,8 @@ export const UsersList = ({ users, cache }) => {
                     alignItems: "center",
                   }}
                 >
-                  <p style={{ margin: 0 }}>Age</p>
-                  <p style={{ marginBottom: 0 }}>{user.age}</p>
+                  <p style={{ margin: 0, fontSize: "0.8rem" }}>Age</p>
+                  <p style={{ margin: "0.5rem 0 0 0" }}>{user.age}</p>
                 </div>
               </div>
             </Styled.CellContainer>

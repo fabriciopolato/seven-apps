@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import * as Styled from "./StyledNotFound";
+
 export const NotFound = () => {
   const navigate = useNavigate();
 
@@ -8,10 +10,10 @@ export const NotFound = () => {
   };
 
   return (
-    <div>
+    <Styled.NotFound>
       <h1>404</h1>
       <p>Page not found</p>
-      <button onClick={handleClick}>Voltar pra home</button>
-    </div>
+      <button onClick={handleClick}>Back to Home</button>
+    </Styled.NotFound>
   );
 };
