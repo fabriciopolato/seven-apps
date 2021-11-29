@@ -12,6 +12,7 @@ export const HeaderContainer = styled.div.attrs({
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: ${(props) => (props.height ? props.height : "auto")};
 `;
 
 export const HeaderLogo = styled.img.attrs({
@@ -55,6 +56,7 @@ export const FilterContainer = styled.div.attrs({
   width: auto;
   min-width: 350px;
   margin-bottom: 1rem;
+  height: ${(props) => (props.height ? props.height : "auto")};
 `;
 
 export const Input = styled.input.attrs({

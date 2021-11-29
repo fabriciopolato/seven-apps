@@ -1,11 +1,13 @@
 import { useFilter } from "../../hooks/useFilter";
 import * as Styled from "./StyledComponents";
 
+export const FILTER_HEIGHT = 36;
+
 export const Filter = () => {
   const { onChangeFilters, filters } = useFilter();
 
   return (
-    <Styled.FilterContainer>
+    <Styled.FilterContainer height={FILTER_HEIGHT}>
       <Styled.Input
         type="text"
         name="name"

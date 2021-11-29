@@ -1,4 +1,6 @@
 import { List, CellMeasurer } from "react-virtualized";
+import { FILTER_HEIGHT } from "./Filter";
+import { HEADER_HEIGHT } from "./Header";
 
 import { NoUserMessage } from "./NoUserMessage";
 
@@ -7,16 +9,12 @@ import * as Styled from "./StyledComponents";
 export const UsersList = ({ users, cache }) => {
   // eslint-disable-next-line no-restricted-globals
   //get height of the element Header
-  const headerHeight =
-    document.getElementsByClassName("header-container")[0].clientHeight;
-  const filterHeight =
-    document.getElementsByClassName("filter-container")[0].clientHeight;
 
   return users.length === 0 ? (
     <NoUserMessage />
   ) : (
     <List
-      height={window.innerHeight - headerHeight - filterHeight - 80}
+      height={window.innerHeight - HEADER_HEIGHT - FILTER_HEIGHT - 80}
       rowCount={users.length}
       itemData={users}
       rowHeight={cache.current.rowHeight}
