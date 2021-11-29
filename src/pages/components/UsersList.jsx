@@ -14,7 +14,7 @@ export const UsersList = ({ users, cache }) => {
     <NoUserMessage />
   ) : (
     <List
-      height={window.innerHeight - HEADER_HEIGHT - FILTER_HEIGHT - 80}
+      height={window.innerHeight - HEADER_HEIGHT - FILTER_HEIGHT - 40}
       rowCount={users.length}
       itemData={users}
       rowHeight={cache.current.rowHeight}
