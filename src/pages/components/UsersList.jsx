@@ -6,21 +6,25 @@ import * as Styled from "./StyledComponents";
 
 export const UsersList = ({ users, cache }) => {
   // eslint-disable-next-line no-restricted-globals
+  //get height of the element Header
+  const headerHeight =
+    document.getElementsByClassName("header-container")[0].clientHeight;
+  const filterHeight =
+    document.getElementsByClassName("filter-container")[0].clientHeight;
+
   return users.length === 0 ? (
     <NoUserMessage />
   ) : (
     <List
-      // eslint-disable-next-line no-restricted-globals
-      height={screen.height - 200}
+      height={window.innerHeight - headerHeight - filterHeight - 80}
       rowCount={users.length}
       itemData={users}
       rowHeight={cache.current.rowHeight}
       deferredMeasurementCache={cache.current}
-      width={365}
+      width={window.innerWidth}
       rowRenderer={({ key, index, style, parent }) => {
         const user = users[index];
 
-        const evenOrOdd = index % 2 === 0 ? "even" : "odd";
         const initialLetters = user.name.substring(0, 2).toUpperCase();
 
         return (
@@ -33,12 +37,13 @@ export const UsersList = ({ users, cache }) => {
           >
             <Styled.CellContainer style={style}>
               <div
-                className={`cell ${evenOrOdd}`}
+                className="cell"
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  maxWidth: "295px",
+                  maxWidth: "316px",
+                  margin: "auto",
                 }}
               >
                 <div

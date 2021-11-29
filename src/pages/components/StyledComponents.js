@@ -6,7 +6,7 @@ export const NoUserMessage = styled.p.attrs({
   font-size: 1.5rem;
 `;
 
-export const HeaderContainer = styled.p.attrs({
+export const HeaderContainer = styled.div.attrs({
   className: "header-container",
 })`
   display: flex;
