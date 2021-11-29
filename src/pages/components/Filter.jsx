@@ -11,7 +11,7 @@ export const Filter = () => {
         name="name"
         id="name"
         onChange={onChangeFilters}
-        placeholder="Nome"
+        placeholder="Name"
         value={filters.name}
       />
       <Styled.Input
@@ -19,7 +19,7 @@ export const Filter = () => {
         type="number"
         name="age"
         id="age"
-        placeholder="Idade"
+        placeholder="Age"
         onChange={onChangeFilters}
         value={filters.age}
       />

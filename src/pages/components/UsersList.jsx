@@ -1,9 +1,14 @@
 import { List, CellMeasurer } from "react-virtualized";
 
+import { NoUserMessage } from "./NoUserMessage";
+
 import * as Styled from "./StyledComponents";
 
 export const UsersList = ({ users, cache }) => {
-  return (
+  // eslint-disable-next-line no-restricted-globals
+  return users.length === 0 ? (
+    <NoUserMessage />
+  ) : (
     <List
       // eslint-disable-next-line no-restricted-globals
       height={screen.height - 200}
@@ -42,11 +47,10 @@ export const UsersList = ({ users, cache }) => {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    border: "2px solid #2F4858",
+                    border: "1px solid #2F4858",
                     borderRadius: "50%",
                     height: "50px",
                     width: "50px",
-                    backgroundColor: "#fafafa",
                   }}
                 >
                   <p style={{ textAlign: "center" }}>{initialLetters}</p>
@@ -69,7 +73,7 @@ export const UsersList = ({ users, cache }) => {
                     alignItems: "center",
                   }}
                 >
-                  <p style={{ margin: 0 }}>Idade</p>
+                  <p style={{ margin: 0 }}>Age</p>
                   <p style={{ marginBottom: 0 }}>{user.age}</p>
                 </div>
               </div>
